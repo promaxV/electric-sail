@@ -3,7 +3,7 @@ import numpy as np
 K = 3.09
 M_P = 1.67262192e-27  # kg
 N_0 = 7.3 * 10e-15  # km^-3
-V = 3 * 1e3  # km/s
+V = 3 * 1e2  # km/s
 R_0 = 0.02  # km
 E = 1.6e-19  # K
 
