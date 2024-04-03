@@ -14,7 +14,7 @@ def main():
     wire_radius = 1 * float(input("Введите радиус провода(в милиметрах): "))
     wire_potential = 1000 * float(input("Введите потенциал провода(в кВ): "))
 
-    mass = 1  # float(input("Введите массу корабля: "))
+    mass = float(input("Введите массу корабля (в кг): "))
 
     under_exp = M_P * V**2 / (E * wire_potential) * np.log(R_0 / wire_radius)
     df_dz = 1000 * K * M_P * N_0 * V**2 * R_0 / (np.sqrt(np.exp(under_exp)) - 1)
