@@ -1,6 +1,6 @@
 import numpy as np
 
-K = 3.09
+K = 3.09 * 1e12
 M_P = 1.67262192e-27  # kg
 N_0 = 7.3 * 10e-15  # km^-3
 V = 3 * 1e2  # km/s
@@ -11,7 +11,7 @@ E = 1.6e-19  # K
 def main():
     wires_cnt = int(input("Введите число проводов: "))
     wire_length = float(input("Введите длину провода(в километрах): "))
-    wire_radius = 1 * float(input("Введите радиус провода(в миллиметрах): "))
+    wire_radius = 1e-6 * float(input("Введите радиус провода(в миллиметрах): "))
     wire_potential = 1000 * float(input("Введите потенциал провода(в кВ): "))
 
     mass = float(input("Введите массу корабля (в кг): "))
