@@ -9,10 +9,10 @@ E = 1.6e-19  # K
 
 
 def main():
-    wires_cnt = 10  # int(input("Введите число проводов: "))
-    wire_length = 10  # float(input("Введите длину провода(в километрах): "))
-    wire_radius = 1e-3 * 1e-3  # float(input("Введите радиус провода(в метрах): "))
-    wire_potential = 10000  # float(input("Введите потенциал провода(в кВ): "))
+    wires_cnt = int(input("Введите число проводов: "))
+    wire_length = float(input("Введите длину провода(в километрах): "))
+    wire_radius = 1 * float(input("Введите радиус провода(в милиметрах): "))
+    wire_potential = 1000 * float(input("Введите потенциал провода(в кВ): "))
 
     mass = 1  # float(input("Введите массу корабля: "))
 
