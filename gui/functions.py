@@ -6,6 +6,7 @@ E = 1.6 *10e-19
 T_E = 12 # 1.5 * 10e5
 EPS_0 = 8.85 * 10e-12
 
+
 def es_calculate(wires_count: int, 
                  wires_length: float, 
                  wires_radius: float, 
