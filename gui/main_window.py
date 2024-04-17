@@ -66,30 +66,30 @@ def add_main_window():
             dpg.add_table_column()
             with dpg.table_row():
                 with dpg.table_cell():
-                    dpg.add_text("Введите число проводов:", tag='input_wires_count_text')
+                    dpg.add_text("Число проводов:", tag='input_wires_count_text')
                     dpg.add_input_int(tag="input_wires_count", default_value=4, min_clamped=True, min_value=0)
 
-                    dpg.add_text("Введите длину провода (в километрах):", tag = 'input_wires_length_text')
-                    dpg.add_input_double(tag="input_wires_length", default_value=1, min_clamped=True, min_value=0)
+                    dpg.add_text("Длина провода, км:", tag = 'input_wires_length_text')
+                    dpg.add_input_double(tag="input_wires_length", default_value=1, min_clamped=True, min_value=0, format = '%.1f')
 
-                    dpg.add_text("Введите радиус провода (в микрометрах):", tag = 'input_wires_radius_text')
-                    dpg.add_input_double(tag="input_wires_radius", default_value=10, min_clamped=True, min_value=0)
+                    dpg.add_text("Диаметр провода, мм:", tag = 'input_wires_radius_text')
+                    dpg.add_input_double(tag="input_wires_radius", default_value=0.1, min_clamped=True, min_value=0, format = '%.1f')
 
-                    dpg.add_text("Введите потенциал провода (в кВ):", tag = 'input_wires_potential_text')
-                    dpg.add_input_double(tag="input_wires_potential", default_value=20, min_clamped=True, min_value=0)
+                    dpg.add_text("Потенциал провода, кВ:", tag = 'input_wires_potential_text')
+                    dpg.add_input_double(tag="input_wires_potential", default_value=20, min_clamped=True, min_value=0, format = '%.1f')
 
-                    dpg.add_text("Введите массу корабля (в кг):", tag = 'input_sc_mass_text')
-                    dpg.add_input_double(tag="input_sc_mass", default_value=24, min_clamped=True, min_value=0)
+                    dpg.add_text("Масса корабля, кг:", tag = 'input_sc_mass_text')
+                    dpg.add_input_double(tag="input_sc_mass", default_value=24, min_clamped=True, min_value=0, format = '%.1f')
 
                 with dpg.table_cell():
-                    dpg.add_text("Введите плотность протонов солнечного ветра (в cm^-3):", tag = 'input_sw_density_text')
-                    dpg.add_input_double(tag="input_sw_density", default_value=7.3, min_clamped=True, min_value=0)
+                    dpg.add_text("Плотность протонов солнечного ветра, cm^-3:", tag = 'input_sw_density_text')
+                    dpg.add_input_double(tag="input_sw_density", default_value=7.3, min_clamped=True, min_value=0, format = '%.1f')
 
-                    dpg.add_text("Введите скорость солнечного ветра (в км/с):", tag = 'input_sw_velocity_text')
-                    dpg.add_input_double(tag="input_sw_velocity", default_value=400, min_clamped=True, min_value=0)
+                    dpg.add_text("Скорость солнечного ветра, км/с:", tag = 'input_sw_velocity_text')
+                    dpg.add_input_double(tag="input_sw_velocity", default_value=400, min_clamped=True, min_value=0, format = '%.1f')
 
         # Element for file input
-        dpg.add_text("Введите название файла:", tag ='input_file_path_text', show = False)
+        dpg.add_text("Название файла:", tag ='input_file_path_text', show = False)
         dpg.add_input_text(tag="input_file_path", default_value= 'input.csv', show = False)
 
 
@@ -99,10 +99,10 @@ def add_main_window():
 
 
         dpg.add_button(label="Рассчитать", callback=calculate_callback)
-        dpg.add_text(default_value="Удельная сила действующая на провод: ", tag="text_df_dz")
-        dpg.add_text(default_value="Сила действующая на провод: ", tag="text_f_w")
-        dpg.add_text(default_value="Сила действующая на корабль: ", tag="text_f_sc")
-        dpg.add_text(default_value="Ускорение корабля: ", tag="text_ac_sc")
+        dpg.add_text(default_value="Погонная сила, Н/м: ", tag="text_df_dz")
+        dpg.add_text(default_value="Сила действующая на провод, Н: ", tag="text_f_w")
+        dpg.add_text(default_value="Сила действующая на корабль, Н: ", tag="text_f_sc")
+        dpg.add_text(default_value="Тяговое ускорение, м/c^2: ", tag="text_ac_sc")
 
     dpg.set_primary_window(main_window, value=True)
 
