@@ -29,6 +29,9 @@ def add_main_window():
 
             dpg.configure_item("input_file_path", show=False)
             dpg.configure_item("input_file_path_text", show=False)
+            
+            dpg.configure_item("input_wires_material_density", show=True)
+            dpg.configure_item("input_wires_material_density_text", show=True)
 
         elif data == "File":
             # Show only the string input element for file input
@@ -55,6 +58,9 @@ def add_main_window():
 
             dpg.configure_item("input_file_path", show=True)
             dpg.configure_item("input_file_path_text", show=True)
+            
+            dpg.configure_item("input_wires_material_density", show=False)
+            dpg.configure_item("input_wires_material_density_text", show=False)
 
     with dpg.window(label="Main", tag="window_main") as main_window:
         # Add dropdown menu
@@ -74,11 +80,14 @@ def add_main_window():
 
                     dpg.add_text("Диаметр провода, мм:", tag = 'input_wires_radius_text')
                     dpg.add_input_double(tag="input_wires_radius", default_value=0.1, min_clamped=True, min_value=0, format = '%.1f')
+                    
+                    dpg.add_text("Плотность материала проводов, кг/м^3:", tag = 'input_wires_material_density_text')
+                    dpg.add_input_double(tag="input_wires_material_density", default_value=2.7, min_clamped=True, min_value=0, format = '%.1f')
 
                     dpg.add_text("Потенциал провода, кВ:", tag = 'input_wires_potential_text')
                     dpg.add_input_double(tag="input_wires_potential", default_value=20, min_clamped=True, min_value=0, format = '%.1f')
 
-                    dpg.add_text("Масса корабля, кг:", tag = 'input_sc_mass_text')
+                    dpg.add_text("Масса корабля без учета проводов, кг:", tag = 'input_sc_mass_text')
                     dpg.add_input_double(tag="input_sc_mass", default_value=24, min_clamped=True, min_value=0, format = '%.1f')
 
                 with dpg.table_cell():
@@ -91,12 +100,6 @@ def add_main_window():
         # Element for file input
         dpg.add_text("Название файла:", tag ='input_file_path_text', show = False)
         dpg.add_input_text(tag="input_file_path", default_value= 'input.csv', show = False)
-
-
-
-
-
-
 
         dpg.add_button(label="Рассчитать", callback=calculate_callback)
         dpg.add_text(default_value="Погонная сила, Н/м: ", tag="text_df_dz")

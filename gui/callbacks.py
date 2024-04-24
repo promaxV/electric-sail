@@ -11,12 +11,13 @@ def calculate_callback():
         wires_count = dpg.get_value("input_wires_count")
         wires_length = dpg.get_value("input_wires_length")
         wires_radius = 1e-3 *dpg.get_value("input_wires_radius") / 2
+        wires_material_density = dpg.get_value("input_wires_material_density")
         wires_potential = 1000 * dpg.get_value("input_wires_potential")
         sc_mass = dpg.get_value("input_sc_mass")
         sw_density = dpg.get_value("input_sw_density")
         sw_velocity = dpg.get_value("input_sw_velocity")
 
-        df_dz, f_w, f_sc, ac_sc = es_calculate(wires_count, wires_length, wires_radius, wires_potential, sc_mass, sw_density, sw_velocity)
+        df_dz, f_w, f_sc, ac_sc = es_calculate(wires_count, wires_length, wires_radius, wires_potential, sc_mass, wires_material_density, sw_density, sw_velocity)
 
         dpg.set_value("text_df_dz", "Погонная сила, Н/м: " + str(round(df_dz,2)))
         dpg.set_value("text_f_w", "Сила действующая на провод, Н: " + str(round(f_w,2)))
