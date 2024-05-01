@@ -10,6 +10,7 @@ python = "^3.10"
 click = "^8.1.7"
 numpy = "^1.26.4"
 dearpygui = "^1.11.1"
+pandas = "^2.2.2"
 
 
 [build-system]

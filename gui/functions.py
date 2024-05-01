@@ -24,4 +24,6 @@ def es_calculate(wires_count: int,
     
     wires_mass = 1000*wires_length*np.pi*wires_radius**2 * wire_material_density * wires_count
     
+    print(wires_mass/(wires_mass+sc_mass))
+    
     return df_dz, df_dz * wires_length, df_dz * wires_length * wires_count, df_dz * wires_length * wires_count / (sc_mass + wires_mass)

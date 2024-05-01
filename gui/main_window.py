@@ -82,7 +82,7 @@ def add_main_window():
                     dpg.add_input_double(tag="input_wires_radius", default_value=0.1, min_clamped=True, min_value=0, format = '%.1f')
                     
                     dpg.add_text("Плотность материала проводов, кг/м^3:", tag = 'input_wires_material_density_text')
-                    dpg.add_input_double(tag="input_wires_material_density", default_value=2.7, min_clamped=True, min_value=0, format = '%.1f')
+                    dpg.add_input_double(tag="input_wires_material_density", default_value=2700, min_clamped=True, min_value=0, format = '%.1f')
 
                     dpg.add_text("Потенциал провода, кВ:", tag = 'input_wires_potential_text')
                     dpg.add_input_double(tag="input_wires_potential", default_value=20, min_clamped=True, min_value=0, format = '%.1f')
