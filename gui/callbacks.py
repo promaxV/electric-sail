@@ -19,10 +19,10 @@ def calculate_callback():
 
         df_dz, f_w, f_sc, ac_sc = es_calculate(wires_count, wires_length, wires_radius, wires_potential, sc_mass, wires_material_density, sw_density, sw_velocity)
 
-        dpg.set_value("text_df_dz", "Погонная сила, Н/м: " + str(round(df_dz,2)))
-        dpg.set_value("text_f_w", "Сила действующая на провод, Н: " + str(round(f_w,2)))
-        dpg.set_value("text_f_sc", "Сила действующая на корабль, Н: " + str(round(f_sc,2)))
-        dpg.set_value("text_ac_sc", "Тяговое ускорение, м/c^2: " + str(round(ac_sc,2)))
+        dpg.set_value("text_df_dz", "Погонная сила, Н/м: " + str(round(df_dz,5)))
+        dpg.set_value("text_f_w", "Сила действующая на провод, Н: " + str(round(f_w,5)))
+        dpg.set_value("text_f_sc", "Сила действующая на корабль, Н: " + str(round(f_sc,5)))
+        dpg.set_value("text_ac_sc", "Тяговое ускорение, м/c^2: " + str(round(ac_sc,5)))
 
     elif input_type == 'File':
         file_name = dpg.get_value('input_file_path')
